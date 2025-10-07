@@ -1,0 +1,18 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata: 
+  labels: 
+    app.kubernetes.io/instance: go-syjgswiw
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: go-syjgswiw 
+  name: go-syjgswiw
+spec:
+  port:
+    targetPort: 8081 
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: go-syjgswiw
+    weight: 100 
